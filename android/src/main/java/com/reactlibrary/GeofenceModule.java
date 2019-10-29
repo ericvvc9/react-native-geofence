@@ -44,10 +44,10 @@ public class GeofenceModule extends ReactContextBaseJavaModule {
 
     private Context mContext;
 
-    public static final String ENTER_GEOFENCE = "RNGeofence:EnterGeofence";
-    public static final String EXIT_GEOFENCE = "RNGeofence:ExitGeofence";
-    public static final String DEVICE_BOOT_COMPLETED = "RNGeofence:DeviceBootCompleted";
-    public static final String REACT_CLASS = "RNGeofenceModule";
+    public static final String ENTER_GEOFENCE = "Geofence:EnterGeofence";
+    public static final String EXIT_GEOFENCE = "Geofence:ExitGeofence";
+    public static final String DEVICE_BOOT_COMPLETED = "Geofence:DeviceBootCompleted";
+    public static final String REACT_CLASS = "GeofenceModule";
 
     private GoogleApiClient mGoogleApiClient;
     private PendingIntent mGeofencePendingIntent;

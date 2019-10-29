@@ -1,6 +1,14 @@
-import { NativeModules } from 'react-native';
+import { NativeModules,NativeEventEmitter, Platform } from 'react-native';
 
 const { Geofence:RNGeofence } = NativeModules;
+const EventEmitter = new NativeEventEmitter(RNGeofence || {});
+
+export const GeofenceEvent = {
+    Enter: RNGeofence.ENTER_GEOFENCE,
+    Exit: RNGeofence.EXIT_GEOFENCE,
+    DeviceBootCompleted: RNGeofence.DEVICE_BOOT_COMPLETED,  // is null in iOS
+}
+
 const Geofence = {};
 const GeofenceConfigSchema = {
     "title": "GeofenceConfig",
