@@ -244,11 +244,11 @@ public class GeofenceModule extends ReactContextBaseJavaModule {
         if (mGeofencePendingIntent != null) {
         return mGeofencePendingIntent;
         }
-        Intent intent = new Intent(reactContext, GeofenceTransitionsIntentService.class);
+        Intent intent = new Intent(this.getReactApplicationContext(), GeofenceTransitionsIntentService.class);
         // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when
         // calling addGeofences() and removeGeofences().
         Log.i(REACT_CLASS, "Geofence intent = " + intent);
-        mGeofencePendingIntent = PendingIntent.getService(reactContext, 0, intent, PendingIntent.
+        mGeofencePendingIntent = PendingIntent.getService(this.getReactApplicationContext(), 0, intent, PendingIntent.
                 FLAG_UPDATE_CURRENT);
         return mGeofencePendingIntent;
     }
